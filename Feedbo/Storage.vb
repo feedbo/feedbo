@@ -3,10 +3,12 @@ Imports System.Type
 
 Public Class Storage
 
+    'DataTables to store data
     Private Shared _questions As DataTable
     Private Shared _responses As DataTable
     Private Shared _comments As DataTable
 
+    'Constructor
     Shared Sub New()
         'Initialize questions table
         _questions = New DataTable()
@@ -120,7 +122,6 @@ Public Class Storage
 
                     Else
                         Console.WriteLine("string")
-
                         row(i) = rowArr(i)
                     End If
 
@@ -132,9 +133,4 @@ Public Class Storage
         Return newTable
     End Function
 
-    Public Shared Sub ResetForm(ByRef parent As homeForm)
-        Dim form = New homeForm
-        form.Show()
-        parent.Close()
-    End Sub
 End Class
